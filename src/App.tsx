@@ -7,6 +7,9 @@ import PricingPage from './pages/PricingPage';
 import CreatorsPage from './pages/CreatorsPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import DisclaimerPage from './pages/DisclaimerPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 import './App.css';
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
             <Route path="/creators" element={<CreatorsPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/disclaimer" element={<DisclaimerPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
           </Routes>
         </main>
         <Footer />

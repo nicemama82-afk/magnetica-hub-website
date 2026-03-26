@@ -25,7 +25,14 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-secondary">
               <li><Link to="/blog" className="hover:text-primary">Blog</Link></li>
               <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
-              <li><a href="#" className="hover:text-primary">Privacy</a></li>
+              <li><Link to="/privacy" className="hover:text-primary">Privacy</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold text-primary mb-4">Legal</h3>
+            <ul className="space-y-2 text-sm text-secondary">
+              <li><Link to="/terms" className="hover:text-primary">Terms of Service</Link></li>
+              <li><Link to="/disclaimer" className="hover:text-primary">Disclaimer</Link></li>
             </ul>
           </div>
           <div>
