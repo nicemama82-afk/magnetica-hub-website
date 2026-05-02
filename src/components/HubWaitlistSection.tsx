@@ -33,7 +33,11 @@ export default function HubWaitlistSection() {
         We’re expanding into new creator niches. Tell us what you want next — and get early access when it launches.
       </p>
 
-      <p><strong>We only build hubs with real demand. If enough creators request it, we launch it.</strong></p>
+      <p>
+        <strong>
+          We only build hubs with real demand. If enough creators request it, we launch it.
+        </strong>
+      </p>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -41,18 +45,21 @@ export default function HubWaitlistSection() {
           value={niche}
           onChange={(e) => setNiche(e.target.value)}
         />
+        <br />
 
         <input
           placeholder="What help do you want?"
           value={help}
           onChange={(e) => setHelp(e.target.value)}
         />
+        <br />
 
         <input
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        <br />
 
         <button type="submit">Suggest & Join Waitlist</button>
       </form>
@@ -61,12 +68,10 @@ export default function HubWaitlistSection() {
 
       <h3>Most Requested Hubs (Coming Soon)</h3>
 
-      <div>
-        <p>Coaching Hub</p>
-        <p>Fitness Creator Hub</p>
-        <p>Influencer Hub</p>
-        <p>Course Creator Hub</p>
-      </div>
+      <p>Coaching Hub</p>
+      <p>Fitness Creator Hub</p>
+      <p>Influencer Hub</p>
+      <p>Course Creator Hub</p>
 
       <p>Join early creators shaping the future of Magnetica Hub</p>
     </section>
