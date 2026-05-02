@@ -1,74 +1,40 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-export default function HubWaitlistSection() {
-  const [niche, setNiche] = useState("");
-  const [help, setHelp] = useState("");
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
+import HomePage from './pages/HomePage';
+import MarketplacePage from './pages/MarketplacePage';
+import PricingPage from './pages/PricingPage';
+import CreatorsPage from './pages/CreatorsPage';
+import BlogPage from './pages/BlogPage';
+import ContactPage from './pages/ContactPage';
+import DisclaimerPage from './pages/DisclaimerPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 
-    const data = {
-      niche,
-      help,
-      email,
-      date: new Date().toISOString(),
-    };
+import './App.css';
 
-    const existing = JSON.parse(localStorage.getItem("magnetica_waitlist") || "[]");
-    localStorage.setItem("magnetica_waitlist", JSON.stringify([...existing, data]));
-
-    setSubmitted(true);
-    setNiche("");
-    setHelp("");
-    setEmail("");
-  };
-
+function App() {
   return (
-    <section style={{ padding: "40px", textAlign: "center" }}>
-      <h2>Help Shape The Future of Magnetica Hub</h2>
+    <Router>
+      <Navigation />
 
-      <p>
-        We’re expanding into new creator niches. Tell us what you want next — and get early access when it launches.
-      </p>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/marketplace" element={<MarketplacePage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/creators" element={<CreatorsPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/disclaimer" element={<DisclaimerPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+      </Routes>
 
-      <p><strong>We only build hubs with real demand. If enough creators request it, we launch it.</strong></p>
-
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="What niche should we add?"
-          value={niche}
-          onChange={(e) => setNiche(e.target.value)}
-        />
-
-        <input
-          placeholder="What help do you want?"
-          value={help}
-          onChange={(e) => setHelp(e.target.value)}
-        />
-
-        <input
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <button type="submit">Suggest & Join Waitlist</button>
-      </form>
-
-      {submitted && <p>Thanks! You're on the waitlist ✨</p>}
-
-      <h3>Most Requested Hubs (Coming Soon)</h3>
-
-      <div>
-        <p>Coaching Hub</p>
-        <p>Fitness Creator Hub</p>
-        <p>Influencer Hub</p>
-        <p>Course Creator Hub</p>
-      </div>
-
-      <p>Join early creators shaping the future of Magnetica Hub</p>
-    </section>
+      <Footer />
+    </Router>
   );
 }
+
+export default App;
