@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import HubWaitlistSection from "../components/HubWaitlistSection";
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
@@ -182,3 +182,4 @@ export default function HomePage() {
     </div>
   );
 }
+<HubWaitlistSection />
