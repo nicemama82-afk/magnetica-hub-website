@@ -1,33 +1,30 @@
- import HubWaitlistSection from "../components/HubWaitlistSection";
+ import HubWaitlistSection from '../components/HubWaitlistSection';
 
 export default function HomePage() {
   return (
-    <div style={{ padding: "40px" }}>
-      <h1>The All-In-One System for Faceless Creators</h1>
-
-      <p>
-        Create content. Automate your workflow. Scale your TikTok and YouTube — all in one place.
-      </p>
-
-      <hr style={{ margin: "40px 0" }} />
-
-      <h2>Choose Your Creator Path</h2>
-
-      <div>
-        <h3>Faceless Content Creator</h3>
-        <p>Grow using AI tools and automation</p>
-        <a href="#">Enter Faceless System</a>
-      </div>
-
-      <div style={{ marginTop: "20px" }}>
-        <h3>AI Music Creator (Vokl Hub)</h3>
-        <p>Create and monetise AI music</p>
-        <a href="#">Enter Music System</a>
-      </div>
-
-      <hr style={{ margin: "40px 0" }} />
+    <main style={{ fontFamily: "'Georgia', serif", background: '#0a0a0a', minHeight: '100vh', color: '#fff' }}>
+      <header style={{
+        textAlign: 'center',
+        padding: '80px 20px 40px',
+        borderBottom: '1px solid #222',
+      }}>
+        <h1 style={{
+          fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+          fontWeight: 900,
+          letterSpacing: '-2px',
+          background: 'linear-gradient(135deg, #fff 0%, #a78bfa 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          margin: 0,
+        }}>
+          Magnetica Hub
+        </h1>
+        <p style={{ color: '#888', marginTop: '16px', fontSize: '1.1rem', letterSpacing: '0.05em' }}>
+          The creator platform built by demand
+        </p>
+      </header>
 
       <HubWaitlistSection />
-    </div>
+    </main>
   );
 }
